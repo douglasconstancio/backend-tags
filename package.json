@@ -1,0 +1,22 @@
+{
+  "name": "backend-tags",
+  "version": "1.0.0",
+  "description": "Ao conhecer uma pessoa que está aplicando para a Magrathea gostamos de ter uma conversa sobre código. Afinal, escrever, ler e discutir sobre código faz parte da nossa rotina diária de trabalho.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasconstancio/backend-tags.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/douglasconstancio/backend-tags/issues"
+  },
+  "homepage": "https://github.com/douglasconstancio/backend-tags#readme"
+}
