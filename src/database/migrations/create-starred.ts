@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm'
+import { MigrationInterface, QueryRunner, Table, TableUnique } from 'typeorm'
 
 // TODO: Why migration class name should need a JavaScript timestamp appended? 😞
 export class CreateStarred1616567230000 implements MigrationInterface {
@@ -50,6 +50,11 @@ export class CreateStarred1616567230000 implements MigrationInterface {
                 ]
             })
         )
+
+        const categoryUniqueConstraint
+            = new TableUnique({ columnNames:  [ 'user_id', 'repo_id', 'tags'] })
+
+        await queryRunner.createUniqueConstraint('starred', categoryUniqueConstraint)
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
