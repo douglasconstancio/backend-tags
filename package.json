@@ -3,17 +3,18 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.ts",
-    "keywords": [],
-    "author": "Douglas Constancio",
-    "license": "ISC",
     "scripts": {
         "dev": "nodemon src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "keywords": [],
+    "author": "Douglas Constancio",
+    "license": "ISC",
     "dependencies": {
         "@types/cors": "^2.8.10",
         "@types/method-override": "^0.0.31",
         "@types/pg": "^7.14.11",
+        "@types/uuid": "^8.3.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1",
