@@ -4,10 +4,9 @@ import { Starred } from '../models/starred'
 @EntityRepository(Starred)
 export class StarredRepository extends Repository<Starred> {
 
-    // TODO: Use setParameters()
     async findByFilter(userId: string, filter: string) {
-        const search = `%${filter || ''}%`
-        return this.createQueryBuilder('starred')
+        const search = `%${filter}%`
+        const query = this.createQueryBuilder('starred')
             .select([
                 'starred.id',
                 'starred.user_id',
@@ -17,11 +16,14 @@ export class StarredRepository extends Repository<Starred> {
                 'starred.name',
                 'starred.url',
             ])
-            .where(`starred.user_id = '${userId}'`)
+            .where(`starred.user_id = :userId`)
                 .andWhere(new Brackets(qb => qb
-                    .where(`starred.description ilike '${search}'`)
-                    .orWhere(`starred.tags ilike '${search}'`)))
-                .getMany()
+                    .where(`starred.description ilike :search`)
+                    .orWhere(`starred.tags ilike :search`)))
+                .setParameters({ userId, search })
+
+            return query.getMany()
+
     }
 
 }
