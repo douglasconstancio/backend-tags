@@ -6,7 +6,6 @@ const routes = Router()
 const starredController = new StarredController()
 
 routes.get('/starred-repositories/:id/:filter', starredController.find)
-
 routes.get('/starred-repositories/:id', starredController.find)
 
 routes.get('/starred-repositories', starredController.findAll)

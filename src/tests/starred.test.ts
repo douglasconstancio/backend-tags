@@ -32,29 +32,45 @@ describe('tags', () => {
         await connection.runMigrations()
     })
 
-    // Manual transactions 😎😂
+    // Manual transactions 😂😞
     beforeEach(async () => {
         const connection = getConnection()
         await connection.query(`
             INSERT INTO starred (id, name, user_id, repo_id, tags, description, url)
-            VALUES ('9d7cb784-70c9-4d67-bb31-827faa60ee9a', 'Repositorio React Web', '3c57b9c4-6305-4239-912f-c494aa5c2f8d', '000001', 'ReactJS', 'React JS - Frontend', 'https://github.com/facebook/react');
+            VALUES (
+                '9d7cb784-70c9-4d67-bb31-827faa60ee9a',
+                'Repositorio React Web',
+                '3c57b9c4-6305-4239-912f-c494aa5c2f8d',
+                '000001',
+                'ReactJS',
+                'React JS - Frontend',
+                'https://github.com/facebook/react'
+            );
         `)
 
         await connection.query(`
             INSERT INTO starred (id, name, user_id, repo_id, tags, description, url)
-            VALUES ('22d38a4a-94f4-4390-afca-80eb6b90c775', 'Flutter', '91ee2d8c-cb37-467d-9b30-01c2fbe9324b', '000003', 'Flutter', 'Flutter Mobile', 'https://github.com/flutter/flutter');
+            VALUES (
+                '22d38a4a-94f4-4390-afca-80eb6b90c775',
+                'Flutter',
+                '91ee2d8c-cb37-467d-9b30-01c2fbe9324b',
+                '000003',
+                'Flutter',
+                'Flutter Mobile',
+                'https://github.com/flutter/flutter'
+            );
         `)
     })
 
     afterEach(async () => {
-        // const connection = getConnection()
-        // await connection.query('DELETE FROM starred')
+        const connection = getConnection()
+        await connection.query('DELETE FROM starred')
     })
 
     afterAll(async () => {
-        // const connection = getConnection()
-        // await connection.dropDatabase()
-        // await connection.close()
+        const connection = getConnection()
+        await connection.dropDatabase()
+        await connection.close()
     })
 
     it('should be create tags', async () => {
