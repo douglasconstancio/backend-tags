@@ -9,6 +9,7 @@
     <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-material-de-apoio">Material de apoio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-como-baixar">Como baixar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-banco-de-dados">Banco de dados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-cobertura-de-testes">Cobertura de testes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-sobre"> Sobre </a>
 
@@ -61,6 +62,9 @@ Abaixo estão algumas das tecnologias utilizadas durante o desenvolvimento do pr
     // Instalar dependências
     $ yarn
 
+    // Realizar as migrações
+    $ yarn migration:run
+
     // Iniciar projeto
     $ yarn dev
 
@@ -70,6 +74,24 @@ Abaixo estão algumas das tecnologias utilizadas durante o desenvolvimento do pr
     // Verificar cobertura de código dos testes
     $ yarn test:coverage
 ```
+---
+
+## 🏦🎲 Banco de dados
+
+Foi escolhido Postgrees para utilização no projeto, por isso, deve-se criar um banco de dados chamado `tags`. Para isso, pode ser utilizado o programa Postbird.
+
+<img src="public/database-creation.png">
+
+Preencher a parametrização para uso:
+
+<img src="public/parameters-db.png">
+
+E executar o comando abaixo (_`'uuid-ossp'` um módulo contrib, portanto, não é carregado no servidor por padrão. Você deve carregá-lo em seu banco de dados para usá-lo_):
+
+```sql
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
+
 ---
 
 ## 📊 Cobertura testes:
