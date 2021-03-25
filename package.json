@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.ts",
+    "type": "module",
     "scripts": {
         "dev": "nodemon src/server.ts",
         "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
