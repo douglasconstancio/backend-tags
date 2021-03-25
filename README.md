@@ -78,13 +78,19 @@ Abaixo estão algumas das tecnologias utilizadas durante o desenvolvimento do pr
 
 ## 🏦🎲 Banco de dados
 
-Foi escolhido Postgrees para utilização no projeto, por isso, deve-se criar um banco de dados chamado `tags`. Para isso, pode ser utilizado o programa Postbird.
+Foi escolhido Postgrees 🐘 para utilização no projeto, por isso, deve-se criar um banco de dados chamado `tags`. Para auxilio, pode ser utilizado o programa Postbird.
 
-<img src="public/database-creation.png">
+Exemplo de parametrização para uso:
 
-Preencher a parametrização para uso:
+|    |
+| ---|
+| host: `localhost`
+| port: `5432`          |
+| username: `postgres`  |
+| password: `*******`   |
+| database: `postgrees` |
 
-<img src="public/parameters-db.png">
+
 
 E executar o comando abaixo (_`'uuid-ossp'` um módulo contrib, portanto, não é carregado no servidor por padrão. Você deve carregá-lo em seu banco de dados para usá-lo_):
 
