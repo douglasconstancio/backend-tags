@@ -123,7 +123,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ## 🔖 Sobre
 
 <p align="justify">
-Esse projeto foi desenvolvido com base na <a href="https://github.com/magrathealabs/template-projeto-selecao/blob/master/projects/GITHUB.md"> proposta</a> de projeto da MagratheaLabs. <a href="https://magrathealabs.com/pt-br/"><img src="https://magrathealabs.com/wp-content/themes/magrathea/assets/img/apple-touch-icon.png" style="width: 14px;"></a>
+Esse projeto foi desenvolvido com base na <a href="https://github.com/magrathealabs/template-projeto-selecao/blob/master/projects/GITHUB.md"> proposta</a> de projeto da MagratheaLabs.
 
 </p>
 
