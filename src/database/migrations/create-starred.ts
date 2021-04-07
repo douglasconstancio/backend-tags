@@ -16,18 +16,15 @@ export class CreateStarred1616567230000 implements MigrationInterface {
                     },
                     {
                         name: 'user_id',
-                        type: 'varchar',
-                        isUnique: true
+                        type: 'varchar'
                     },
                     {
                         name: 'repo_id',
-                        type: 'varchar',
-                        isUnique: true
+                        type: 'varchar'
                     },
                     {
                         name: 'tags',
-                        type: 'varchar',
-                        isUnique: true
+                        type: 'varchar'
                     },
                     {
                         name: 'description',
@@ -52,7 +49,7 @@ export class CreateStarred1616567230000 implements MigrationInterface {
         )
 
         const categoryUniqueConstraint
-            = new TableUnique({ columnNames:  [ 'user_id', 'repo_id', 'tags'] })
+            = new TableUnique({ columnNames: [ 'user_id', 'repo_id', 'tags'] })
 
         await queryRunner.createUniqueConstraint('starred', categoryUniqueConstraint)
     }

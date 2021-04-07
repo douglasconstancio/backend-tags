@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(json())
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
-app.use(routes)
 app.use(cors())
+app.use(routes)
 
 app.use((
     err: Error,
