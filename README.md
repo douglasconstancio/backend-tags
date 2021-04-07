@@ -1,4 +1,4 @@
-<h1 align="center" >GitTags 👨🏻‍💻</h1>
+<h1 align="center" >GitTags - Backend 👨🏻‍💻</h1>
 
 <img src="public/gittags.png">
 
@@ -36,6 +36,8 @@ Abaixo estão algumas das tecnologias utilizadas durante o desenvolvimento do pr
   <img  src="https://img.shields.io/badge/-Node.js-339933?&style=for-the-badge&logoColor=fff&logo=Node.js&logoWidth=25"/>
   <img  src="https://img.shields.io/badge/-Jest-C21325?&style=for-the-badge&logoColor=fff&logo=Jest&logoWidth=25"/>
   <img  src="https://img.shields.io/badge/-Typeorm-F37626?&style=for-the-badge&logoColor=fff&logo=Databricks&logoWidth=25"/>
+  <img  src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white"/>
+  <img  src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
 </p>
 
 ---

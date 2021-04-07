@@ -1,7 +1,8 @@
 import { AppError } from '../errors/app-error'
 import { Request, Response } from 'express'
-import { getCustomRepository } from 'typeorm'
+import { getCustomRepository, In } from 'typeorm'
 import { StarredRepository } from '../repositories/starred'
+import { isEmpty } from '../util/is-empty'
 
 export class StarredController {
 
@@ -10,6 +11,10 @@ export class StarredController {
         const { body: { user_id, repo_id, tags }, body } = request
 
         try {
+            if (isEmpty(user_id) || isEmpty(repo_id) || isEmpty(tags)) {
+                throw new AppError('Invalid parameters.')
+            }
+
             const sameUniqueKey = await starredRepository
                 .findOne({ user_id, repo_id, tags })
 
@@ -17,7 +22,7 @@ export class StarredController {
                 throw new AppError('This tag already exists.')
             }
 
-            const result = await starredRepository.create(body)
+            const result = await starredRepository.save(body)
 
             return response.json(result)
         } catch (error) {
@@ -66,6 +71,16 @@ export class StarredController {
             const repositories = filter
                 ? await starredRepository.findByFilter(id, filter)
                 : await starredRepository.find({ user_id: id })
+
+            if (filter) {
+                const repos = repositories.map(item => item['repo_id'])
+                const result = await starredRepository.find({
+                    user_id: id,
+                    repo_id: In(repos)
+                })
+
+                return response.json(result)
+            }
 
             return response.json(repositories)
         } catch (error) {
