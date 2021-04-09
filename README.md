@@ -91,7 +91,7 @@ Exemplo de parametrização para uso:
 | port: `5432`          |
 | username: `postgres`  |
 | password: `*******`   |
-| database: `postgrees` |
+| database: `postgres`  |
 
 
 
