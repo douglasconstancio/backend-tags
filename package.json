@@ -2,11 +2,11 @@
     "name": "backend-tags",
     "version": "1.0.0",
     "description": "",
-    "main": "index.ts",
+    "main": "server.js",
     "scripts": {
         "dev": "nodemon src/server.ts",
         "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
-        "start": "node dist/src/server.js",
+        "start": "node ./dist/src/server.js",
         "test": "cross-env jest --i --forceExit",
         "test:coverage": "nyc jest -i --coverage --reporter=html --forceExit"
     },
