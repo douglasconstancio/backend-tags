@@ -8,6 +8,11 @@ module.exports = {
     "entities": ["dist/src/models/**.js"],
     "cli": {
         "migrationsDir": "./src/database/migrations"
+    },
+    "extra": {
+        "ssl": {
+            "rejectUnauthorized": false
+        }
     }
 }
 
